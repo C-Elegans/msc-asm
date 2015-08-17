@@ -1,0 +1,55 @@
+My CPU
+
+Requirements:
+  32 bit RISC architecture
+  16 32 bit registers
+  load/store
+  conditional branch
+  8 bit immediate (no shift)
+  decent assembler
+
+Optional Goals:
+  FPU
+  limited dual issue
+  interrupts
+  LLVM backend
+
+
+instruction format
+6-bit opcode
+71111122223333444455555555666669
+00000000000000001111111111111111
+1-opcode
+2-rDest
+3-rSrc1
+4-rSrc2
+5-immediate 8 bit operand
+6-5bit shifter
+7-fp instruction
+9-immediate flag
+
+R15-Program Counter
+R14-Stack Pointer
+
+Opcodes
+NON-FP
+00000 NOP
+00001 MOV
+00010 LDR
+00011 STR
+00100 ADD
+00101 SUB
+00110 AND
+00111 NOT
+01000 OR
+01001 XOR
+01010 LSL
+01011 LSR
+01100 CMP
+01101 IN
+01110 OUT
+01111 JMP (cond)
+10000 CALL
+10001 RET
+10010 ASR
+10011 ASL
